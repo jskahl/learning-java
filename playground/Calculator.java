@@ -1,45 +1,43 @@
 import java.util.Scanner;
 
-class Calculator {
-    public static void main() {
+public class Calculator {
+    // Text input method
+    static String inputString(String caption) {
+        Scanner input = new Scanner(System.in);
+        System.out.println(caption);
+
+        return input.nextLine();
+    };
+
+    // Number input method
+    static int inputInt(String caption) {
+        Scanner input = new Scanner(System.in);
+        System.out.println(caption);
+
+        return input.nextInt();
+    };
+
+    public static void main(String[] args) {
         // Get math operations
-        Scanner operationInput = new Scanner(System.in);
-        System.out.println("Select operation (+, -, * and /): ");
-        String operation = operationInput.nextLine();
+        String operation = inputString("Select operation (+, -, * or /): ");
 
         // Get first value
-        Scanner firstValueInput = new Scanner(System.in);
-        System.out.println("Enter first value: ");
-        Integer firstValue = firstValueInput.nextInt();
+        Integer firstValue = inputInt("Enter first value: ");
 
         // Get second value
-        Scanner secondValueInput = new Scanner(System.in);
-        System.out.println("Enter second value: ");
-        Integer secondValue = secondValueInput.nextInt();
+        Integer secondValue = inputInt("Enter second value: ");
 
-        // Operations
+        // Checks if firstValue will be divided by 0
+        if (operation.equals("/") && secondValue == 0) {
+            System.out.println("A number can't be divided by zero (0).");
+            return;
+        }
+        ;
 
-        // if statement
-        //if (operation.equals("+")) {
-        //   System.out.println(firstValue + " + " + secondValue + " = " + (firstValue + secondValue));
-        //}
-
-        //if (operation.equals("-")) {
-        //   System.out.println(firstValue + " - " + secondValue + " = " + (firstValue - secondValue));
-        //}
-
-        //if (operation.equals("*")) {
-        //   System.out.println(firstValue + " * " + secondValue + " = " + (firstValue * secondValue));
-        //}
-
-        //if (operation.equals("/")) {
-        //   System.out.println(firstValue + " / " + secondValue + " = " + (firstValue / secondValue));
-        //}
-
-        // switch case
+        // Execute operations
         switch (operation) {
             case "+":
-                System.out.println(firstValue + " + " + secondValue + " = " + (firstValue + secondValue));  
+                System.out.println(firstValue + " + " + secondValue + " = " + (firstValue + secondValue));
                 break;
             case "-":
                 System.out.println(firstValue + " - " + secondValue + " = " + (firstValue - secondValue));
@@ -54,5 +52,6 @@ class Calculator {
                 System.out.println("Something went wrong.");
                 break;
         }
-    }
+    };
+
 }
