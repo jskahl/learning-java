@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class ClassicSum {
-    public static void main() {
+    public static void main(String[] args) {
         String greeting = "Hello, world (this is a variable)!";
         System.out.println(greeting);
 
