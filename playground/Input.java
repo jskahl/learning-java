@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Main {
+public class Input {
     public static void main() {
         System.out.println("-----------------------------");
         System.out.println("------------Name-------------");
